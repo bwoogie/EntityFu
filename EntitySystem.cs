@@ -1,4 +1,10 @@
-﻿using System;
+/// [EntityFuC#](https://github.com/bwoogie/EntityFu)
+/// [EntityFu](https://github.com/NatWeiss/EntityFu)
+/// A simple, fast entity component system written in C++.
+/// Under the MIT license.
+///
+
+using System;
 using System.Collections.Generic;
 using Eid = System.UInt16;
 
