@@ -1,4 +1,10 @@
-﻿using Cid = System.UInt16;
+/// [EntityFuC#](https://github.com/bwoogie/EntityFu)
+/// [EntityFu](https://github.com/NatWeiss/EntityFu)
+/// A simple, fast entity component system written in C++.
+/// Under the MIT license.
+///
+
+using Cid = System.UInt16;
 
 namespace EntityFu {
     class EntityComponent
