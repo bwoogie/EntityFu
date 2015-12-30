@@ -1,4 +1,4 @@
-# EntityFu C#
+# EntityFu CS
 C# port of [EntityFu by Nat Weiss](https://github.com/NatWeiss/EntityFu)
 
 A simple, fast entity component system originally written in C++ and ported to C#. Originally built for the game [Songbringer](http://songbringer.com) and adapted for release.
