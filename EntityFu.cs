@@ -27,7 +27,7 @@ namespace EntityFu {
 	        const bool isEmpty = false;
             private static Cid _numCid;
 	        public static Cid numCids { get { return _numCid; } set { _numCid = value; } }
-            public Cid cid;
+            public abstract Cid cid { get; set; }
         }
 
         /// The maximum number of entities. Increase this if you need more.
@@ -102,23 +102,13 @@ namespace EntityFu {
         /// <summary>
         /// Create an entity with the given Component(s) and return the `Eid`.
         /// </summary>
-        /// <param name="ids">An array of the Cid's of the components</param>
-        /// <param name="args">Components...</param>
+        /// <param name="args"></param>
         /// <returns></returns>
-        public static Eid create(Cid[] ids, params Component[] args) {
-            //I hate having to require Cid[] ids... If anyone knows a better way let me know.
+        public static Eid create(params Component[] args) {
             Eid eid = create();
-            if (ids.Count() != args.Count())
-                Assert(false, "Failed to create entity. Cid / Component mismatch.");
-
-            /*foreach (Component c in args) {
+            foreach (Component c in args) {
                 addComponent(c.cid, eid, c);
-            }*/
-
-            for(int i = 0; i < ids.Count(); i++) {
-                addComponent(ids[i], eid, args[i]);
             }
-
             return eid;
         }
 
