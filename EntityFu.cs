@@ -102,13 +102,23 @@ namespace EntityFu {
         /// <summary>
         /// Create an entity with the given Component(s) and return the `Eid`.
         /// </summary>
-        /// <param name="args"></param>
+        /// <param name="ids">An array of the Cid's of the components</param>
+        /// <param name="args">Components...</param>
         /// <returns></returns>
-        public static Eid create(params Component[] args) {
+        public static Eid create(Cid[] ids, params Component[] args) {
+            //I hate having to require Cid[] ids... If anyone knows a better way let me know.
             Eid eid = create();
-            foreach (Component c in args) {
+            if (ids.Count() != args.Count())
+                Assert(false, "Failed to create entity. Cid / Component mismatch.");
+
+            /*foreach (Component c in args) {
                 addComponent(c.cid, eid, c);
+            }*/
+
+            for(int i = 0; i < ids.Count(); i++) {
+                addComponent(ids[i], eid, args[i]);
             }
+
             return eid;
         }
 
