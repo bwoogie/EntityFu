@@ -25,7 +25,11 @@ namespace EntityFu {
             }
 
             public virtual bool isEmpty() { return maxHP == 0; }
-            public static new Cid cid;
+            private static Cid myCid;
+            public override ushort cid { get { return myCid; } set { myCid = value; } }
+
+            public static void setCid(ushort c) { myCid = c; }
+            public static Cid getCid() { return myCid; }
         }
 
         //Copy and paste this class to easily create a new Component and change the class name and "value" variable
@@ -41,7 +45,11 @@ namespace EntityFu {
             }
 
             public virtual bool isEmpty() { return value == 0; }
-            public static Cid cid;
+            private static Cid myCid;
+            public override ushort cid { get { return myCid; } set { myCid = value; } }
+
+            public static void setCid(ushort c) { myCid = c; }
+            public static Cid getCid() { return myCid; }
         }
         */
 
