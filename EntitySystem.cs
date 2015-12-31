@@ -19,7 +19,7 @@ namespace EntityFu {
             /// Add more components your systems will use frequently
 
             public Ent(Eid _id) {
-                health = (EntityComponent.HealthComponent)EntityFu.getComponent(EntityComponent.HealthComponent.cid, _id);
+                health = (EntityComponent.HealthComponent)EntityFu.getComponent(EntityComponent.HealthComponent.getCid(), _id);
                 id = _id;
             }
         }
@@ -30,7 +30,7 @@ namespace EntityFu {
             public static void tick(double fixedDelta) {
                 List<Eid> entitiesToDestroy = new List<Eid>(); //Required to keep from getting 'Collection Was Modified' exception
 
-                var all = EntityFu.getAll(EntityComponent.HealthComponent.cid);
+                var all = EntityFu.getAll(EntityComponent.HealthComponent.getCid());
 
                 // for this example, just decrement all health components each tick
                 foreach (var eid in all) {
